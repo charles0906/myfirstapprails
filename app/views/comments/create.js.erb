@@ -1,0 +1,3 @@
+<% if !@comment.errors.any? %>
+  $('#comments').append('<div><%=escape_javascript(@comment.body) %><div><br>');
+<% end %> 

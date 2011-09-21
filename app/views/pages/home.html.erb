@@ -1,0 +1,11 @@
+<h1>Sample Blog</h1>
+    <p>
+      This is the home page for the
+      <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
+      sample application.
+    </p>
+   	<% if user_signed_in? %>
+	    <%= link_to "Show Posts!", posts_path , :class => "signup_button round"%>
+	  <% else %>
+	    <%= link_to "Sign up now!", new_user_registration_path, :class => "signup_button round" %>
+	  <% end %>

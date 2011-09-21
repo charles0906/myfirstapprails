@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <b>Tittle:</b>
+  <%= @post.tittle %>
+</p>
+<p>
+  <b>Content:</b>
+  <%= @post.content %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+<br>
+<%#= link_to "Comments", comments_path %>
+<br>
+<h2>Comments</h2>
+<%= render @post.comments %>	
+<div id="comments"></div>
+<h3>Comment!</h3>
+<%= form_for (@comment, :remote=>true)  do |f| %>
+  <%= f.hidden_field :post_id, :value => @post.id %>
+  <div class="field">
+    <%= f.label :body    %><br/>
+    <%= f.text_area :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Comment' %>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

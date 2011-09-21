@@ -1,0 +1,13 @@
+<header>
+	<p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  <%=  link_to image_tag("logo.png", :alt => "Sample App", :class => "round"), home_path %>
+  <nav class="round">
+   	<% if user_signed_in? %>
+	    Signed in as <%= current_user.email %>. Not you?
+	    <%= link_to "Sign out", destroy_user_session_path %>
+	  <% else %>
+	  <%= link_to_rpx "Sign in", user_session_url %>
+	  <% end %>
+  </nav>
+</header>
